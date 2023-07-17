@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Container, Form, Row } from 'react-bootstrap'
-import { useNavigate } from 'react-router';
+import { useLocation, useNavigate } from 'react-router';
 
 
 function getdata(){
@@ -14,18 +14,15 @@ function getdata(){
 }
 
 
-function From() {
+function Edit() {
 
   const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location);
+  const [inputvalue, setinputvalue] = useState(
+    location.state.single
 
-  const [inputvalue, setinputvalue] = useState({
-    name: '',
-    email: '',
-    course : '',
-    password: '',
-    gender: ''
-
-  })
+  )
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -36,12 +33,10 @@ function From() {
     e.preventDefault();
 
     const gdata = getdata();
+    gdata[location.state.index]=inputvalue
 
-    const uid = gdata.length + 101;
-    const n_data = ({...inputvalue, id: uid});
-
-    const ne_data = ([...gdata, n_data]);
-    localStorage.setItem("stu_data", JSON.stringify(ne_data));
+    // const ne_data = ([...gdata, n_data]);
+    localStorage.setItem("stu_data", JSON.stringify(gdata));
     navigate("/view");
   }
 
@@ -79,7 +74,7 @@ function From() {
                 {
                   ["Male", "Female"].map((label) => {
                     return (
-                      <Form.Check type="radio" label={label} name='gender' value={label} onChange={handleChange} />
+                      <Form.Check type="radio" label={label} name='gender' value={label} onChange={handleChange} checked={label==inputvalue.gender} />
                     )
                   })
                 }
@@ -96,4 +91,4 @@ function From() {
   )
 }
 
-export default From
+export default Edit

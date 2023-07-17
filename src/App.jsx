@@ -9,6 +9,8 @@ import Home from './Componets/Home/Home.jsx';
 import { Route, Routes } from 'react-router';
 import Card  from './Componets/Card/Card'
 import Viewdata from './Componets/Viewdata/Viewdata.jsx';
+import Edit from './Componets/Edit/Edit'
+import Studentdata from './Componets/StudentData/Studentdata'
 
 function App() {
 
@@ -19,6 +21,8 @@ function App() {
       <Route path='/' element={<Home/>}/>
       <Route path='/view' element={<Viewdata />}/>
       <Route path='/from' element={<From/>}/>
+      <Route path='/edit' element={<Edit/>}/>
+      <Route path='/studentview' element={<Studentdata/>}/>
       {/* <Route path='/about/card' element={<Card/>}/> */}
     </Routes>
     </>

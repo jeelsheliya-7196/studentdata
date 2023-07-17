@@ -1,3 +1,17 @@
 .form-check-input[type=radio]{
   border:  1px solid black;
 }
+.dropdown-toggle::after{
+  display: none;
+  background-color: transparent;
+}
+.moredata{
+  background: transparent;
+  color: black;
+  font-size: 21px;
+  border: none;
+}
+.moredata:hover{
+  background-color: transparent;
+  color: black;
+}
