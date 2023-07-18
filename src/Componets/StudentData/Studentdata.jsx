@@ -22,7 +22,8 @@ function Studentdata() {
                     <span class="bg-secondary p-1 px-4 rounded text-white">{location.state.id}</span>
                     <h5 class="mt-2 mb-0">{location.state.name}</h5>
                     <span>{location.state.email}</span><br/>
-                    <span>{location.state.course}</span>
+                    <span>{location.state.course}</span><br/>
+                    <span>{location.state.gender}</span>
                     
                     <div class="px-4 mt-1">
                         <p class="fonts">Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
@@ -42,8 +43,15 @@ function Studentdata() {
                         <button class="btn btn-outline-primary px-4">Message</button>
                         <button class="btn btn-primary px-4 ms-3">Contact</button>
                     </div>
-                </div>                
-            </div>  
+                    
+                    
+                </div>
+                
+               
+                
+                
+            </div>
+            
         </div>
         
     </div>
